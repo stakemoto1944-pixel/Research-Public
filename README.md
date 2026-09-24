@@ -14,7 +14,7 @@ Research publications and supplementary documents by **Satoshi Takemoto (竹本 
 | :--- | :--- | :--- | :--- | :--- |
 | Paper (1) | *Systematization of the Nonequilibrium Integrated Phase (NEIP)* | 2026-08-25 | [10.5281/zenodo.22088694](https://doi.org/10.5281/zenodo.22088694) | [`論文/Systematization of the Nonequilibrium Integrated Phase (NEIP) in Complex Vector Fields.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP)%20in%20Complex%20Vector%20Fields.pdf) |
 | Paper (2) | *Emergence of Macroscopic Coherence based on Extended Integrated Field Equation and Predictive Error Minimization in Complex Vector Fields* | 2026-08-28 | [10.5281/zenodo.22138906](https://doi.org/10.5281/zenodo.22138906) | [`論文/Emergence of Macroscopic Coherence...pdf`](論文/Emergence%20of%20Macroscopic%20Coherence%20based%20on%20Extended%20Integrated%20Field%20Equation%20and%20Predictive%20Error%20Minimization%20in%20Complex%20Vector%20Fields.pdf) |
-| Paper (3) | 非平衡集積相（NEIP）のデータ駆動同定プロトコル：可同定性・幾何学的特異性・計算ボトルネックの解決 *(Data-Driven Identification Protocol for Non-equilibrium Integrated Phases (NEIP))* | 2026-09-17 (Zenodo) | DOI to be confirmed | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
+| Paper (3) | 非平衡集積相（NEIP）のデータ駆動同定プロトコル：可同定性・幾何学的特異性・計算ボトルネックの解決 *(Data-Driven Identification Protocol for Non-equilibrium Integrated Phases (NEIP))* | 2026-09-17 (Zenodo) | [10.5281/zenodo.22682953](https://doi.org/10.5281/zenodo.22682953) | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
 
 > Older version of Paper (1) (scalar-field version, 2026-08-14): [`論文/Systematization of the Nonequilibrium Integrated Phase (NEIP.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP.pdf)
 
