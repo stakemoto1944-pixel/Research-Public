@@ -1,0 +1,42 @@
+M,note,seconds,stage
+20000,M非依存（保存間引き）,8.649406,A4_simulate
+500,1ペア・朴素DFT O(M^2) repeat=2,0.016434,A1_naive_dft
+500,1ペア・FFT O(M log M),1.6e-05,A1_fft
+1000,1ペア・朴素DFT O(M^2) repeat=2,0.077478,A1_naive_dft
+1000,1ペア・FFT O(M log M),2.4e-05,A1_fft
+2000,1ペア・朴素DFT O(M^2) repeat=2,0.292063,A1_naive_dft
+2000,1ペア・FFT O(M log M),4.3e-05,A1_fft
+4000,1ペア・朴素DFT O(M^2) repeat=1,1.009845,A1_naive_dft
+4000,1ペア・FFT O(M log M),0.000628,A1_fft
+8000,1ペア・朴素DFT O(M^2) repeat=1,4.266538,A1_naive_dft
+8000,1ペア・FFT O(M log M),0.000376,A1_fft
+3000,435ペア csdループ nperseg=256,0.269498,A2_phase1_loop
+3000,435ペア Welchバッチ nperseg=256,0.001214,A2_phase1_batched
+3000,435ペア Welchバッチ nperseg=375(∝M/8),0.003056,A2_phase1_nperseg_scaled
+5000,435ペア csdループ nperseg=256,0.434895,A2_phase1_loop
+5000,435ペア Welchバッチ nperseg=256,0.002577,A2_phase1_batched
+5000,435ペア Welchバッチ nperseg=625(∝M/8),0.002268,A2_phase1_nperseg_scaled
+8000,435ペア csdループ nperseg=256,0.658333,A2_phase1_loop
+8000,435ペア Welchバッチ nperseg=256,0.004366,A2_phase1_batched
+8000,435ペア Welchバッチ nperseg=1000(∝M/8),0.004577,A2_phase1_nperseg_scaled
+12000,435ペア csdループ nperseg=256,0.971583,A2_phase1_loop
+12000,435ペア Welchバッチ nperseg=256,0.006816,A2_phase1_batched
+12000,435ペア Welchバッチ nperseg=1500(∝M/8),0.00708,A2_phase1_nperseg_scaled
+16000,435ペア csdループ nperseg=256,1.309914,A2_phase1_loop
+16000,435ペア Welchバッチ nperseg=256,0.009175,A2_phase1_batched
+16000,435ペア Welchバッチ nperseg=2000(∝M/8),0.009428,A2_phase1_nperseg_scaled
+20000,435ペア csdループ nperseg=256,1.627013,A2_phase1_loop
+20000,435ペア Welchバッチ nperseg=256,0.011588,A2_phase1_batched
+20000,435ペア Welchバッチ nperseg=2500(∝M/8),0.01257,A2_phase1_nperseg_scaled
+3000,n_eval=2000 固定,0.251267,A3_kde_fisher
+5000,n_eval=2000 固定,0.363302,A3_kde_fisher
+8000,n_eval=2000 固定,0.568352,A3_kde_fisher
+12000,n_eval=2000 固定,1.009186,A3_kde_fisher
+16000,n_eval=2000 固定,1.275325,A3_kde_fisher
+20000,n_eval=2000 固定,1.420638,A3_kde_fisher
+3000,ROI 6seeds 最小0.09122 最大0.30855,0.1691,B_lammin
+5000,ROI 6seeds 最小0.12149 最大0.22459,0.177208,B_lammin
+8000,ROI 6seeds 最小0.13165 最大0.21056,0.173412,B_lammin
+12000,ROI 6seeds 最小0.15159 最大0.21991,0.184966,B_lammin
+16000,ROI 6seeds 最小0.16078 最大0.23029,0.197426,B_lammin
+20000,ROI 6seeds 最小0.16132 最大0.24261,0.203608,B_lammin

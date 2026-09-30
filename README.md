@@ -10,13 +10,34 @@ Research publications and supplementary documents by **Satoshi Takemoto (竹本 
 
 ## 1. Main Papers (Zenodo preprints)
 
-| # | Title | Date | DOI | File |
-| :--- | :--- | :--- | :--- | :--- |
-| Paper (1) | *Systematization of the Nonequilibrium Integrated Phase (NEIP)* | 2026-08-25 | [10.5281/zenodo.22088694](https://doi.org/10.5281/zenodo.22088694) | [`論文/Systematization of the Nonequilibrium Integrated Phase (NEIP) in Complex Vector Fields.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP)%20in%20Complex%20Vector%20Fields.pdf) |
-| Paper (2) | *Emergence of Macroscopic Coherence based on Extended Integrated Field Equation and Predictive Error Minimization in Complex Vector Fields* | 2026-08-28 | [10.5281/zenodo.22138906](https://doi.org/10.5281/zenodo.22138906) | [`論文/Emergence of Macroscopic Coherence...pdf`](論文/Emergence%20of%20Macroscopic%20Coherence%20based%20on%20Extended%20Integrated%20Field%20Equation%20and%20Predictive%20Error%20Minimization%20in%20Complex%20Vector%20Fields.pdf) |
-| Paper (3) | 非平衡集積相（NEIP）のデータ駆動同定プロトコル：可同定性・幾何学的特異性・計算ボトルネックの解決 *(Data-Driven Identification Protocol for Non-equilibrium Integrated Phases (NEIP))* | 2026-09-17 (Zenodo) | [10.5281/zenodo.22682953](https://doi.org/10.5281/zenodo.22682953) | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
+Works are listed by **title and DOI**. An earlier version of this file used
+"Paper (1)/(2)/(3)" numbering, which collided with the numbering used inside the
+manuscripts themselves; the numbering has been removed to avoid the ambiguity.
 
-> Older version of Paper (1) (scalar-field version, 2026-08-14): [`論文/Systematization of the Nonequilibrium Integrated Phase (NEIP.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP.pdf)
+| Title | Date | DOI | File |
+| :--- | :--- | :--- | :--- |
+| *Systematization of the Nonequilibrium Integrated Phase (NEIP)* | 2026-08-25 | [10.5281/zenodo.22088694](https://doi.org/10.5281/zenodo.22088694) | [`論文/Systematization of the Nonequilibrium Integrated Phase (NEIP.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP.pdf) |
+| *Emergence of Macroscopic Coherence based on Extended Integrated Field Equation and Predictive Error Minimization in Complex Vector Fields* | 2026-08-28 | [10.5281/zenodo.22138906](https://doi.org/10.5281/zenodo.22138906) | [`論文/Emergence of Macroscopic Coherence...pdf`](論文/Emergence%20of%20Macroscopic%20Coherence%20based%20on%20Extended%20Integrated%20Field%20Equation%20and%20Predictive%20Error%20Minimization%20in%20Complex%20Vector%20Fields.pdf) |
+| *Systematization of the Nonequilibrium Integrated Phase (NEIP) in Complex Vector Fields: Foundational Equations, NEIC Criteria, Topological Solenoidal Driving, and Testable Theoretical Predictions* | 2026-09-10 | [10.5281/zenodo.22682953](https://doi.org/10.5281/zenodo.22682953) | [`論文/Systematization ... in Complex Vector Fields.pdf`](論文/Systematization%20of%20the%20Nonequilibrium%20Integrated%20Phase%20(NEIP)%20in%20Complex%20Vector%20Fields.pdf) |
+
+### Manuscript under review
+
+**Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification
+Protocol — Identifiability, Geometric Singularities, and the Resolution of the
+Computational Bottleneck**. Submitted to *Physical Review E*. **No DOI yet** — a
+Zenodo deposit is pending.
+
+| Version | Date | File |
+| :--- | :--- | :--- |
+| First draft (superseded) | 2026-09-19 | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
+| **Revised (current)** | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
+
+> **The revised version supersedes the first draft and is the one to cite.** The
+> revision corrects several quantitative claims and replaces the original
+> theoretical prediction. The specific corrections are listed in
+> [`コード/README.md`](コード/README.md) §6 and are reproducible from the
+> deposited code. The superseded draft is retained only as a record; it is **not**
+> the citable version.
 
 **Research themes**: Nonequilibrium Integrated Phase (NEIP) / Consciousness Critical Field Theory (CCFT) / Nonequilibrium Statistical Field Theory of Mind (NCSFT)
 
@@ -28,10 +49,10 @@ Slide-style explanations and theory documents:
 
 | File | Content |
 | :--- | :--- |
-| `NEIP_1.pdf` | NEIP basics & NEIC 4 requirements (Paper 1) |
-| `NEEP_2.pdf` | Extended Integrated Field Equation & macroscopic coherence (Paper 2) |
-| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (Paper 3) |
-| `NEIP_Systematization.pdf` | NEIP systematization overview |
+| `NEIP_1.pdf` | NEIP basics & NEIC 4 requirements (Zenodo 22088694) |
+| `NEEP_2.pdf` | Extended Integrated Field Equation & macroscopic coherence (Zenodo 22138906) |
+| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (manuscript under review) |
+| `NEIP_Systematization.pdf` | NEIP systematization overview (Zenodo 22682953) |
 | `統合意識理論１.pdf` | Consciousness as a nonequilibrium critical predictive information field (Ver.1.1.0) |
 | `精神の非平衡統計場理論.pdf` | Spin-glass hierarchical self, quantum criticality, semantic phase transition (Ver.1.1.0) |
 | `意識の基礎理論と脳科学的アプローチ.pdf` | Foundations of consciousness theory & neuroscientific approaches (Ver.1.0.0) |
@@ -39,7 +60,28 @@ Slide-style explanations and theory documents:
 
 ---
 
-## 3. Philosophical & Intellectual Works (Books)
+## 3. Code & Data (`コード/`)
+
+Reproduction package for the manuscript under review: the driver scripts that
+produced every number, the raw result tables, and the verbatim stdout log of each
+production run.
+
+- **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
+  execution order, expected values, and a list of the corrections included.
+- **Contents**: 22 Python scripts, 10 result tables, 8 run logs.
+- **Theoretical verification**: `15_theory_verification.py` is shipped *because it
+  failed*; `16_theory_verification.py` is the redesigned run, and
+  `post16_theory_fit.py` quantifies the fit and the refutation of the superseded
+  theory.
+- **Verdicts are computed at run time** from the measured values, never hard-coded.
+
+The scripts are ASCII-renamed copies of the author's Japanese-named working files;
+the code itself is unchanged and every internal reference was rewritten to match.
+The mapping is tabulated in [`コード/README.md`](コード/README.md) §5.
+
+---
+
+## 4. Philosophical & Intellectual Works (Books)
 
 ### 「知を得て無知を識る」series (6 volumes, 2023) — `論文/知を得て無知を識る/`
 
@@ -73,9 +115,25 @@ Research-Public/
 │   ├── *.pdf
 │   ├── 知を得て無知を識る/
 │   └── 身体と脳と意識のあいだ/
-└── 論文解説/      # Explanation & theory slides
+├── 論文解説/      # Explanation & theory slides
+└── コード/        # Code & data for the manuscript under review
+    ├── README.md
+    ├── *.py           # 22 driver / post-analysis / figure scripts
+    ├── *_result.csv   # 10 raw result tables
+    └── logs/          # 8 verbatim run logs
 ```
 
 ## License
 
-Copyright © 2026 Satoshi Takemoto. All rights reserved.
+- **Papers and books** (`論文/`, `論文解説/`): Copyright © 2026 Satoshi Takemoto.
+  All rights reserved.
+- **Code and data** (`コード/`): Copyright © 2026 Satoshi Takemoto, released under
+  the **CC BY 4.0** license (<https://creativecommons.org/licenses/by/4.0/>).
+
+## Citation
+
+If you use the code or data, please cite the work you actually used and link to
+this repository. Note that the **2026-09-30 revised** manuscript supersedes the
+2026-09-19 draft, and that the quantitative corrections listed in
+[`コード/README.md`](コード/README.md) §6 are not optional — the first draft's
+numbers and its original theoretical prediction have both been withdrawn.
