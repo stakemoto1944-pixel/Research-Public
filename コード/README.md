@@ -221,3 +221,16 @@ transfers to the many-body system studied here; the `omega_0`-dependent scaling 
 Copyright (c) 2026 Satoshi Takemoto.
 Code and data are released under the **CC BY 4.0** license
 (<https://creativecommons.org/licenses/by/4.0/>).
+
+## Archive record
+
+- DOI: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
+- Concept DOI: `10.5281/zenodo.23050818`
+- Deposited 2026-09-30 as *Software*, version 1.0
+- Archive file: `NEIP_protocol_code_v1.zip` (164,045 bytes,
+  md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`)
+- Mirror: <https://github.com/stakemoto1944-pixel/Research-Public>
+
+To archive a later revision, create a **new version** of the concept DOI rather
+than editing record 23050819, so that citations to v1.0 continue to resolve to the
+code that produced the numbers they cite.

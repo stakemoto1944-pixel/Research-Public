@@ -24,8 +24,10 @@ manuscripts themselves; the numbering has been removed to avoid the ambiguity.
 
 **Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification
 Protocol — Identifiability, Geometric Singularities, and the Resolution of the
-Computational Bottleneck**. Submitted to *Physical Review E*. **No DOI yet** — a
-Zenodo deposit is pending.
+Computational Bottleneck**. In preparation for submission to *Physical Review E*.
+
+- **Code and data DOI**: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
+  (CC BY 4.0; concept DOI `10.5281/zenodo.23050818`)
 
 | Version | Date | File |
 | :--- | :--- | :--- |
@@ -66,6 +68,8 @@ Reproduction package for the manuscript under review: the driver scripts that
 produced every number, the raw result tables, and the verbatim stdout log of each
 production run.
 
+- **DOI**: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
+  (concept DOI `10.5281/zenodo.23050818`, CC BY 4.0, deposited as *Software*)
 - **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
   execution order, expected values, and a list of the corrections included.
 - **Contents**: 22 Python scripts, 10 result tables, 8 run logs.
