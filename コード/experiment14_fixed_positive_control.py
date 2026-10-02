@@ -100,7 +100,7 @@ def stuart_landau(f0, drive, seed, noise, phase_diff=0.0):
     """
     Stuart–Landau を積分し x, y, theta を返す。
 
-    noise       : 振幅 r への乗法ノイズ強度（I_ij の σ スケーリング进行研究）
+    noise       : 振幅 r への乗法ノイズ強度（I_ij の σ スケーリングを検討する）
     phase_diff  : theta への位相拡散強度 D_theta [rad^2/s]。
                   これを上げると回転の位相 coherence が失われ、I_01 が 0 へ落ちる。
                   PC-3 の検出力曲線は振幅ノイズではなく**こちら**をスイープする

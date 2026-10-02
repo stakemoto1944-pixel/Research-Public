@@ -293,7 +293,7 @@ def main():
             int(sum(r["lam_excludes_zero"] for r in sub)), len(sub)), flush=True)
     if L_MAIN in width and 1 in width and width[1] > 0:
         print(f"    → ブロック化により CI 幅は {width[L_MAIN]/width[1]:.2f} 倍に拡大"
-              f"（現行実装は過小な区間给出）", flush=True)
+              f"（現行実装は過小な区間抽出）", flush=True)
 
 
 if __name__ == "__main__":

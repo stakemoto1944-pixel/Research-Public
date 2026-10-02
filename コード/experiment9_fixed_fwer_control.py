@@ -6,7 +6,7 @@
 【このスクリプトが答える査読課題】
   深掘り計画 #1（統計設計）: 旧基準「435ペア中1ペアでもペア別99%分位を超えたら ROI=True」は
   多重比較を制御していない。純白ノイズ下でも ROI=True になる確率は 1-0.99^435 = 98.7%。
-  → max 統計量 max_j|I_j| の帰無分位に基づく FWER 制御で置換し、FWER を实测する。
+  → max 統計量 max_j|I_j| の帰無分位に基づく FWER 制御で置換し、FWER を実測する。
   併せて、旧実装で発見した null_q99() の重複バグ（default_rng(0) を毎回使用＝
   「5試行平均」が実1試行の重複）を修正する。
 
@@ -15,7 +15,7 @@
 
 【null の3設計】
   N1 iid白色      : 旧基準の null（時間相関なし）。FWER 未制御 Moth.
-  N2 侨存(記憶)    : 同一 γ, c_mem, D, ノイズ経路で J_asym=0（λ_asym=0）。
+  N2 保存(記憶)    : 同一 γ, c_mem, D, ノイズ経路で J_asym=0（λ_asym=0）。
                      時間相関と記憶を保ったまま循環のみを除いた「物理的に正しい」null。
   N3 陪替相ランダム化: ON 軌道の振幅スペクトルを保ち位相のみランダム化。
                      自己相関を厳密保存しつつ時間反転非対称性のみを破壊する null。
@@ -229,7 +229,7 @@ def main():
             roi_old = bool(n_sig_old >= 1)
             roi_new = bool(max_on > thrmax)
             # 動作点（論文の ROI 条件 γ=0.1, c_mem=5.0）だけは陪替を増やして
-            # p 値の解像度水浒を 1/(M+1) 以下にしない
+            # p 値の解像度不足を 1/(M+1) 以下にしない
             n_surr_pt = N_SURR_HI if (gamma == 0.1 and cm == 5.0) else N_SURR
             p_surr, _ = surrogate_pvalue(tr_on, max_on, n_surr=n_surr_pt,
                                           base_seed=500000 + 1000 * gi + mi)

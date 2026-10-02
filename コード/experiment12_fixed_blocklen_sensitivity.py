@@ -3,7 +3,7 @@
 
 診断: 論文の報告 CI [0.190, 0.208]（B=12, seed42, n_eval=5000）と
 B=1000 ブロック bootstrap（seed42）の差が B に由来するのかを分解する。
-raw replicate を保存し、各种 B の percentile 区間を後計算する。
+raw replicate を保存し、各種 B の percentile 区間を後計算する。
 """
 import importlib.util, os
 import numpy as np

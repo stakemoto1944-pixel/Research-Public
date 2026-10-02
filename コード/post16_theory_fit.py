@@ -89,9 +89,9 @@ for r in tc:
         % (f(r, "sigma"), f(r, "omega0"), f(r, "excess"), zf,
            f(r, "excess_corot"), zc, f(r, "excess") / max(f(r, "excess_corot"), 1e-300)))
 zc_all = [f(r, "excess_corot") / max(f(r, "g1_corot_sd"), 1e-300) for r in tc]
-log("  -> 共動臂の z: 最小 %.2f, 最大 %.2f  |  |z| が 3 を超えるものは %d 個"
+log("  -> 共動条件の z: 最小 %.2f, 最大 %.2f  |  |z| が 3 を超えるものは %d 個"
     % (min(zc_all), max(zc_all), sum(1 for v in zc_all if abs(v) > 3)))
-log("  -> 判定: 共動臂の excess は z で有意に 0 から離れていない"
+log("  -> 判定: 共動条件の excess は z で有意に 0 から離れていない"
     " ⟹ (R1) の構造（固定 ⟹ 非縮退 / 共動 ⟹ 縮退）と整合")
 
 # ---------------------------------------------------------------- (W1)
@@ -162,7 +162,7 @@ log("       旧 (P1)（omega0 非依存）の矛盾量: 測定/旧予測 が %.3
     % (min(dev_old), max(dev_old), old_spread,
        "棄却" if old_spread > 10 else "棄却できず"))
 zc_max = max(abs(v) for v in zc_all)
-log("  (R1)  固定臂 z の最小 = %.1f、共動臂 |z| の最大 = %.2f ⟹ 判定: %s"
+log("  (R1)  固定条件 z の最小 = %.1f、共動条件 |z| の最大 = %.2f ⟹ 判定: %s"
     % (min(f(r, "excess") / max(f(r, "g1_sd"), 1e-300) for r in tc), zc_max,
        "確認" if zc_max < 3.0 else "棄却"))
 log("  (W1)  w べき = %+.4f ⟹ 判定: %s"
@@ -173,7 +173,7 @@ log("  N べき = %+.3f（有限サンプル効果の -1.000 からの乖離 %.1
     % (n_sl, 100 * abs(n_sl + 1.0)))
 log("  N*g の単調性: %s  → %s"
     % ("単調減少" if ng[-1] < ng[0] else "単調でない",
-       "単一幂律で記述できない" if not all(ng[i] >= ng[i + 1]
+       "単一冪律で記述できない" if not all(ng[i] >= ng[i + 1]
                                      for i in range(len(ng) - 1))
        else "1/N と整合"))
 log("  (F1) 判定: **部分確認**。床が N とともに減少することは確認できる"
