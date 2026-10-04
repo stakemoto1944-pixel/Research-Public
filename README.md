@@ -26,20 +26,28 @@ manuscripts themselves; the numbering has been removed to avoid the ambiguity.
 Protocol — Identifiability, Geometric Singularities, and the Resolution of the
 Computational Bottleneck**. In preparation for submission to *Physical Review E*.
 
-- **Code and data DOI**: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
-  (CC BY 4.0; concept DOI `10.5281/zenodo.23050818`)
+- **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
+  (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
+  is v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347),
+  which bundles the code archive **and** the manuscript PDF)
 
 | Version | Date | File |
 | :--- | :--- | :--- |
 | First draft (superseded) | 2026-09-19 | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
-| **Revised (current)** | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
+| Revised (superseded) | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
+| **PRE submission version (current)** | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
 
-> **The revised version supersedes the first draft and is the one to cite.** The
-> revision corrects several quantitative claims and replaces the original
-> theoretical prediction. The specific corrections are listed in
-> [`コード/README.md`](コード/README.md) §6 and are reproducible from the
-> deposited code. The superseded draft is retained only as a record; it is **not**
-> the citable version.
+> **The 2026-10-04 version supersedes both earlier files and is the one to cite.**
+> It is the exact source-compiled PDF deposited as v3.0 of the concept DOI above
+> (md5 `7069079fc438bf31f4b1dd2872884e63`; the file in this repository is
+> byte-identical to the Zenodo copy). The 2026-09-30 revision corrected several
+> quantitative claims and replaced the original theoretical prediction; the
+> 2026-10-04 version reformats the manuscript to the journal style (single
+> unstructured abstract, PACS and keywords, journal-style reference list via
+> BibTeX). None of these changes alter the reported numbers, so the deposited
+> code reproduces every version. The corrections are listed in
+> [`コード/README.md`](コード/README.md) §6. The superseded files are retained
+> only as a record; they are **not** the citable versions.
 
 **Research themes**: Nonequilibrium Integrated Phase (NEIP) / Consciousness Critical Field Theory (CCFT) / Nonequilibrium Statistical Field Theory of Mind (NCSFT)
 
@@ -68,8 +76,9 @@ Reproduction package for the manuscript under review: the driver scripts that
 produced every number, the raw result tables, and the verbatim stdout log of each
 production run.
 
-- **DOI**: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
-  (concept DOI `10.5281/zenodo.23050818`, CC BY 4.0, deposited as *Software*)
+- **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
+  (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
+  version — currently v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347))
 - **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
   execution order, expected values, and a list of the corrections included.
 - **Contents**: 22 Python scripts, 10 result tables, 8 run logs.
@@ -137,7 +146,10 @@ Research-Public/
 ## Citation
 
 If you use the code or data, please cite the work you actually used and link to
-this repository. Note that the **2026-09-30 revised** manuscript supersedes the
-2026-09-19 draft, and that the quantitative corrections listed in
-[`コード/README.md`](コード/README.md) §6 are not optional — the first draft's
-numbers and its original theoretical prediction have both been withdrawn.
+this repository. Note that the **2026-10-04 PRE submission version** of the
+manuscript supersedes the 2026-09-30 revision and the 2026-09-19 draft, and that
+the quantitative corrections listed in [`コード/README.md`](コード/README.md) §6
+are not optional — the first draft's numbers and its original theoretical
+prediction have both been withdrawn. Cite the concept DOI
+`10.5281/zenodo.23050818` so that your reference resolves to the complete
+archive.

@@ -224,13 +224,27 @@ Code and data are released under the **CC BY 4.0** license
 
 ## Archive record
 
-- DOI: [10.5281/zenodo.23050819](https://doi.org/10.5281/zenodo.23050819)
-- Concept DOI: `10.5281/zenodo.23050818`
-- Deposited 2026-09-30 as *Software*, version 1.0
+- DOI (cite this): [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
+  — concept DOI, always resolves to the latest version
+- Current latest: v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347),
+  published 2026-10-04 as *Software*, CC BY 4.0
 - Archive file: `NEIP_protocol_code_v1.zip` (164,045 bytes,
-  md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`)
+  md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`) — identical in every version
+- Additional file in v3.0: `NEIP_protocol_manuscript_PRE_submission.pdf`,
+  the manuscript compiled for submission to *Physical Review E*
 - Mirror: <https://github.com/stakemoto1944-pixel/Research-Public>
 
+Version history of the concept DOI:
+
+| Version | Record | Date | Files |
+| :--- | :--- | :--- | :--- |
+| v1.0 | `…zenodo.23050819` | 2026-09-30 | code archive |
+| v2.0 | `…zenodo.23134914` | 2026-10-04 | manuscript PDF only — **code archive missing; do not cite** |
+| **v3.0 (latest)** | `…zenodo.23135347` | 2026-10-04 | code archive + manuscript PDF |
+
 To archive a later revision, create a **new version** of the concept DOI rather
-than editing record 23050819, so that citations to v1.0 continue to resolve to the
-code that produced the numbers they cite.
+than editing an existing record, so that citations continue to resolve to the
+code that produced the numbers they cite. Always verify the **file list** before
+publishing: the concept DOI points at the latest version, so a version published
+without the code archive makes the archive un-reproducible for anyone who
+follows the concept DOI (this is exactly what happened in v2.0).
