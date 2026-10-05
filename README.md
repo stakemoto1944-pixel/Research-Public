@@ -24,7 +24,7 @@ manuscripts themselves; the numbering has been removed to avoid the ambiguity.
 
 **Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification
 Protocol — Identifiability, Geometric Singularities, and the Resolution of the
-Computational Bottleneck**. In preparation for submission to *Physical Review E*.
+Computational Bottleneck**. Submitted to *Physical Review E* on 2026-10-05.
 
 - **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
