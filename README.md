@@ -38,6 +38,7 @@ Computational Bottleneck**. Submitted to *Physical Review E* on 2026-10-05.
 | **PRE submission version (current)** | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
 
 > **The 2026-10-04 version supersedes both earlier files and is the one to cite.**
+> Submitted to *Physical Review E* on 2026-10-05 (Accession Code: `EX12494`).
 > It is the exact source-compiled PDF deposited as v3.0 of the concept DOI above
 > (md5 `7069079fc438bf31f4b1dd2872884e63`; the file in this repository is
 > byte-identical to the Zenodo copy). The 2026-09-30 revision corrected several
