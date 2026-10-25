@@ -4,6 +4,16 @@ Reproduction package for the manuscript
 *Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification Protocol —
 Identifiability, Geometric Singularities, and the Resolution of the Computational Bottleneck*.
 
+> **Status (2026-10-26).** The manuscript is **under review at *JSTAT***
+> (`JSTAT_044P_1026`, submitted 2026-10-23) under the title *Data-Driven
+> Identification of Non-equilibrium Integrated Phases: A Three-Stage Protocol and
+> a Refined Information-Geometric Criterion*. It was previously submitted to
+> *Physical Review E* (`EX12494`; desk reject 2026-10-06) and to *Physica A*
+> (`PHYSA-264230`; desk reject 2026-10-16). The reported numbers are identical in
+> every version from the 2026-09-30 revision onward (the 2026-09-19 first draft's
+> numbers were corrected on 2026-09-30); the submission record is in the repository
+> [README](../README.md#submission-history).
+
 Everything in this directory is the **actual code that produced the numbers in the
 manuscript**, together with the raw result tables and the complete stdout logs of
 every run. No numbers have been re-entered by hand: the result tables are written by
@@ -231,7 +241,13 @@ Code and data are released under the **CC BY 4.0** license
 - Archive file: `NEIP_protocol_code_v1.zip` (164,045 bytes,
   md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`) — identical in every version
 - Additional file in v3.0: `NEIP_protocol_manuscript_PRE_submission.pdf`,
-  the manuscript compiled for submission to *Physical Review E*
+  the manuscript compiled for submission to *Physical Review E* (submitted
+  2026-10-05, `EX12494`). This is the PRE version, kept because it is what v3.0
+  contains; the current manuscript is the 2026-10-23 JSTAT version
+  (`JSTAT_044P_1026`), which is in the GitHub mirror only —
+  [`../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf).
+  The reported numbers are unchanged; see the repository
+  [README](../README.md#submission-history) for the full record
 - Mirror: <https://github.com/stakemoto1944-pixel/Research-Public>
 
 Version history of the concept DOI:

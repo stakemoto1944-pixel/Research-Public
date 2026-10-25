@@ -6,6 +6,11 @@ Research publications and supplementary documents by **Satoshi Takemoto (竹本 
 - **Zenodo (publications)**: [search results on Zenodo](https://zenodo.org/search?q=creators.name:%22Takemoto,%20Satoshi%22)
 - **Contact**: s.takemoto.1944@gmail.com
 
+> **Status as of 2026-10-26**: the data-driven identification manuscript is
+> **under review at *JSTAT*** (`JSTAT_044P_1026`, submitted 2026-10-23). Earlier
+> submissions to *Physical Review E* and *Physica A* were **desk-rejected**; the
+> full record is in [Submission history](#submission-history).
+
 ---
 
 ## 1. Main Papers (Zenodo preprints)
@@ -22,33 +27,63 @@ manuscripts themselves; the numbering has been removed to avoid the ambiguity.
 
 ### Manuscript under review
 
-**Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification
-Protocol — Identifiability, Geometric Singularities, and the Resolution of the
-Computational Bottleneck**. Submitted to *Physical Review E* on 2026-10-05.
+**Data-Driven Identification of Non-equilibrium Integrated Phases: A Three-Stage
+Protocol and a Refined Information-Geometric Criterion** — submitted to the
+*Journal of Statistical Mechanics: Theory and Experiment* (JSTAT, IOP × SISSA) on
+**2026-10-23**, manuscript number **`JSTAT_044P_1026`**. Under review; the
+editor-in-charge was assigned on the day of submission. There is no article DOI
+yet — it will be issued on acceptance.
+
+The work was previously submitted under a longer title, *Non-equilibrium Integrated
+Phases (NEIP): A Data-Driven Identification Protocol — Identifiability, Geometric
+Singularities, and the Resolution of the Computational Bottleneck*. That is the
+title of the Zenodo preprint and of the PRE-submission PDF retained in this
+repository, so earlier citations to that title refer to the same paper.
+
+#### Submission history
+
+| Submitted | Journal | Manuscript no. | Outcome |
+| :--- | :--- | :--- | :--- |
+| 2026-10-05 | *Physical Review E* (APS) | `EX12494` | **Desk reject, 2026-10-06** — rejected at editorial screening ("fails to match the minimal threshold for the APS journals"). No individual reason was disclosed; an inquiry received the same standard text. |
+| 2026-10-14 | *Physica A* (Elsevier) | `PHYSA-264230` | **Desk reject, 2026-10-16** — scope/fit, before review. |
+| 2026-10-23 | *JSTAT* (IOP × SISSA) | `JSTAT_044P_1026` | **Under review** — editor-in-charge assigned 2026-10-23. |
+
+Each row is a separate submission of a **revised** manuscript, not the same file
+resent: the Physica A version was retitled and reframed for that journal's scope,
+and the JSTAT version is a re-titled revision with an expanded introduction. The
+reported numbers are identical in all three. The two earlier submissions are listed
+because their outcome is part of the paper's history; neither is pending, and
+neither produced a referee report.
 
 - **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
   is v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347),
-  which bundles the code archive **and** the manuscript PDF)
+  which bundles the code archive **and** the PRE-submission manuscript PDF)
 
 | Version | Date | File |
 | :--- | :--- | :--- |
 | First draft (superseded) | 2026-09-19 | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
 | Revised (superseded) | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
-| **PRE submission version (current)** | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
+| PRE submission version (superseded as a manuscript; retained as the PRE record) | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
+| **JSTAT submission version (current manuscript)** | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
 
-> **The 2026-10-04 version supersedes both earlier files and is the one to cite.**
-> Submitted to *Physical Review E* on 2026-10-05 (Accession Code: `EX12494`).
-> It is the exact source-compiled PDF deposited as v3.0 of the concept DOI above
-> (md5 `7069079fc438bf31f4b1dd2872884e63`; the file in this repository is
-> byte-identical to the Zenodo copy). The 2026-09-30 revision corrected several
-> quantitative claims and replaced the original theoretical prediction; the
-> 2026-10-04 version reformats the manuscript to the journal style (single
-> unstructured abstract, PACS and keywords, journal-style reference list via
-> BibTeX). None of these changes alter the reported numbers, so the deposited
-> code reproduces every version. The corrections are listed in
-> [`コード/README.md`](コード/README.md) §6. The superseded files are retained
-> only as a record; they are **not** the citable versions.
+> **The 2026-10-23 version is the current manuscript and supersedes all earlier
+> files.** It is the PDF submitted to JSTAT, with the title above. Its reported
+> numbers are identical to the 2026-10-04 version, so the deposited code reproduces
+> both.
+
+> **The 2026-10-04 PRE submission version remains here as a record, not as the
+> current text.** It is the file submitted to *Physical Review E* (`EX12494`) and
+> the exact source-compiled PDF deposited as v3.0 of the concept DOI above (md5
+> `7069079fc438bf31f4b1dd2872884e63`; the file in this repository is byte-identical
+> to the Zenodo copy). It had superseded the 2026-09-30 revision, which corrected
+> several quantitative claims and replaced the original theoretical prediction; the
+> 2026-10-04 file reformatted the manuscript to journal style (single unstructured
+> abstract, PACS and keywords, journal-style reference list via BibTeX). None of
+> these changes alter the reported numbers, so the deposited code reproduces every
+> version. The corrections are listed in [`コード/README.md`](コード/README.md) §6.
+> The superseded files are retained only as a record; they are **not** the citable
+> versions.
 
 **Research themes**: Nonequilibrium Integrated Phase (NEIP) / Consciousness Critical Field Theory (CCFT) / Nonequilibrium Statistical Field Theory of Mind (NCSFT)
 
@@ -62,7 +97,7 @@ Slide-style explanations and theory documents:
 | :--- | :--- |
 | `NEIP_1.pdf` | NEIP basics & NEIC 4 requirements (Zenodo 22088694) |
 | `NEEP_2.pdf` | Extended Integrated Field Equation & macroscopic coherence (Zenodo 22138906) |
-| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (manuscript under review) |
+| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (manuscript under review at *JSTAT*) |
 | `NEIP_Systematization.pdf` | NEIP systematization overview (Zenodo 22682953) |
 | `統合意識理論１.pdf` | Consciousness as a nonequilibrium critical predictive information field (Ver.1.1.0) |
 | `精神の非平衡統計場理論.pdf` | Spin-glass hierarchical self, quantum criticality, semantic phase transition (Ver.1.1.0) |
@@ -73,9 +108,10 @@ Slide-style explanations and theory documents:
 
 ## 3. Code & Data (`コード/`)
 
-Reproduction package for the manuscript under review: the driver scripts that
+Reproduction package for the manuscript under review at *JSTAT*: the driver scripts that
 produced every number, the raw result tables, and the verbatim stdout log of each
-production run.
+production run. The reported numbers are unchanged across the 2026-10-04 (PRE) and
+2026-10-23 (JSTAT) versions, so the package reproduces both.
 
 - **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
@@ -147,10 +183,11 @@ Research-Public/
 ## Citation
 
 If you use the code or data, please cite the work you actually used and link to
-this repository. Note that the **2026-10-04 PRE submission version** of the
-manuscript supersedes the 2026-09-30 revision and the 2026-09-19 draft, and that
-the quantitative corrections listed in [`コード/README.md`](コード/README.md) §6
-are not optional — the first draft's numbers and its original theoretical
+this repository. The manuscript is under review at *JSTAT* (`JSTAT_044P_1026`) and
+has no journal DOI yet; the **2026-10-23 JSTAT submission version** is the current
+text and supersedes the 2026-10-04 PRE submission version and the two earlier
+drafts. The quantitative corrections listed in [`コード/README.md`](コード/README.md)
+§6 are not optional — the first draft's numbers and its original theoretical
 prediction have both been withdrawn. Cite the concept DOI
 `10.5281/zenodo.23050818` so that your reference resolves to the complete
 archive.
