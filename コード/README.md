@@ -12,7 +12,9 @@ Identifiability, Geometric Singularities, and the Resolution of the Computationa
 > (`PHYSA-264230`; desk reject 2026-10-16). The reported numbers are identical in
 > every version from the 2026-09-30 revision onward (the 2026-09-19 first draft's
 > numbers were corrected on 2026-09-30); the submission record is in the repository
-> [README](../README.md#submission-history).
+> [README](../README.md#submission-history). The code and the current manuscript
+> are archived as **v4.0** of the concept DOI
+> ([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287), 2026-10-26).
 
 Everything in this directory is the **actual code that produced the numbers in the
 manuscript**, together with the raw result tables and the complete stdout logs of
@@ -236,17 +238,18 @@ Code and data are released under the **CC BY 4.0** license
 
 - DOI (cite this): [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   — concept DOI, always resolves to the latest version
-- Current latest: v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347),
-  published 2026-10-04 as *Software*, CC BY 4.0
+- Current latest: **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
+  published 2026-10-26 as *Software*, CC BY 4.0
 - Archive file: `NEIP_protocol_code_v1.zip` (164,045 bytes,
   md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`) — identical in every version
-- Additional file in v3.0: `NEIP_protocol_manuscript_PRE_submission.pdf`,
-  the manuscript compiled for submission to *Physical Review E* (submitted
-  2026-10-05, `EX12494`). This is the PRE version, kept because it is what v3.0
-  contains; the current manuscript is the 2026-10-23 JSTAT version
-  (`JSTAT_044P_1026`), which is in the GitHub mirror only —
-  [`../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf).
-  The reported numbers are unchanged; see the repository
+- Manuscript file in v4.0: `NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`,
+  the manuscript submitted to *JSTAT* on 2026-10-23 (`JSTAT_044P_1026`); also in the
+  GitHub mirror —
+  [`../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](../論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf)
+- Manuscript file in v3.0 (kept as the PRE record):
+  `NEIP_protocol_manuscript_PRE_submission.pdf`, compiled for submission to
+  *Physical Review E* (2026-10-05, `EX12494`). The reported numbers are unchanged
+  between the two; see the repository
   [README](../README.md#submission-history) for the full record
 - Mirror: <https://github.com/stakemoto1944-pixel/Research-Public>
 
@@ -256,7 +259,8 @@ Version history of the concept DOI:
 | :--- | :--- | :--- | :--- |
 | v1.0 | `…zenodo.23050819` | 2026-09-30 | code archive |
 | v2.0 | `…zenodo.23134914` | 2026-10-04 | manuscript PDF only — **code archive missing; do not cite** |
-| **v3.0 (latest)** | `…zenodo.23135347` | 2026-10-04 | code archive + manuscript PDF |
+| v3.0 | `…zenodo.23135347` | 2026-10-04 | code archive + PRE-submission manuscript PDF |
+| **v4.0 (latest)** | `…zenodo.23650287` | 2026-10-26 | code archive + JSTAT-submission manuscript PDF |
 
 To archive a later revision, create a **new version** of the concept DOI rather
 than editing an existing record, so that citations continue to resolve to the

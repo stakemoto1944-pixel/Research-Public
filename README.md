@@ -57,8 +57,10 @@ neither produced a referee report.
 
 - **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
-  is v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347),
-  which bundles the code archive **and** the PRE-submission manuscript PDF)
+  is **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
+  published 2026-10-26, which bundles the code archive **and** the JSTAT-submission
+  manuscript PDF. v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347)
+  retains the PRE-submission PDF)
 
 | Version | Date | File |
 | :--- | :--- | :--- |
@@ -74,9 +76,10 @@ neither produced a referee report.
 
 > **The 2026-10-04 PRE submission version remains here as a record, not as the
 > current text.** It is the file submitted to *Physical Review E* (`EX12494`) and
-> the exact source-compiled PDF deposited as v3.0 of the concept DOI above (md5
+> the exact source-compiled PDF deposited in v3.0 of the concept DOI above (md5
 > `7069079fc438bf31f4b1dd2872884e63`; the file in this repository is byte-identical
-> to the Zenodo copy). It had superseded the 2026-09-30 revision, which corrected
+> to the Zenodo copy). v4.0 replaced the bundled manuscript PDF with the JSTAT
+> version; v3.0 keeps this file. It had superseded the 2026-09-30 revision, which corrected
 > several quantitative claims and replaced the original theoretical prediction; the
 > 2026-10-04 file reformatted the manuscript to journal style (single unstructured
 > abstract, PACS and keywords, journal-style reference list via BibTeX). None of
@@ -115,7 +118,9 @@ production run. The reported numbers are unchanged across the 2026-10-04 (PRE) a
 
 - **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
-  version — currently v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347))
+  version — currently **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
+  which bundles the JSTAT-submission manuscript PDF; v3.0 = `10.5281/zenodo.23135347`
+  keeps the PRE-submission PDF)
 - **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
   execution order, expected values, and a list of the corrections included.
 - **Contents**: 22 Python scripts, 10 result tables, 8 run logs.
@@ -190,4 +195,5 @@ drafts. The quantitative corrections listed in [`コード/README.md`](コード
 §6 are not optional — the first draft's numbers and its original theoretical
 prediction have both been withdrawn. Cite the concept DOI
 `10.5281/zenodo.23050818` so that your reference resolves to the complete
-archive.
+archive; the current manuscript is archived there as v4.0
+([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)).
