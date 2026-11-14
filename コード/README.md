@@ -4,12 +4,14 @@ Reproduction package for the manuscript
 *Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification Protocol —
 Identifiability, Geometric Singularities, and the Resolution of the Computational Bottleneck*.
 
-> **Status (2026-10-26).** The manuscript is **under review at *JSTAT***
-> (`JSTAT_044P_1026`, submitted 2026-10-23) under the title *Data-Driven
-> Identification of Non-equilibrium Integrated Phases: A Three-Stage Protocol and
-> a Refined Information-Geometric Criterion*. It was previously submitted to
-> *Physical Review E* (`EX12494`; desk reject 2026-10-06) and to *Physica A*
-> (`PHYSA-264230`; desk reject 2026-10-16). The reported numbers are identical in
+> **Status (2026-11-14).** The manuscript is **not under review at any journal**.
+> Its most recent submission was to *JSTAT* (`JSTAT_044P_1026`, submitted 2026-10-23)
+> under the title *Data-Driven Identification of Non-equilibrium Integrated Phases: A
+> Three-Stage Protocol and a Refined Information-Geometric Criterion*; JSTAT
+> desk-rejected it on 2026-11-14 without external review. It was previously submitted
+> to *Physical Review E* (`EX12494`; desk reject 2026-10-06) and to *Physica A*
+> (`PHYSA-264230`; desk reject 2026-10-16). No version has produced a referee report.
+> The reported numbers are identical in
 > every version from the 2026-09-30 revision onward (the 2026-09-19 first draft's
 > numbers were corrected on 2026-09-30); the submission record is in the repository
 > [README](../README.md#submission-history). The code and the current manuscript
