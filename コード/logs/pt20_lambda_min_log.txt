@@ -1,0 +1,25 @@
+seed 0 done
+seed 1 done
+seed 2 done
+seed 3 done
+seed 4 done
+seed 5 done
+seed 6 done
+seed 7 done
+seed 8 done
+seed 9 done
+seed 10 done
+seed 11 done
+seed 12 done
+seed 13 done
+seed 14 done
+seed 15 done
+seed 16 done
+seed 17 done
+seed 18 done
+seed 19 done
+[standard] 20シード λ_min（点推定, n_eval=5000）
+  ROI    λ_min 平均=0.17372 ±SE 0.0067  中央値=0.1735  範囲[0.1224, 0.227]   σ1平均=2.413
+  EQ     λ_min 平均=1.0632 ±SE 0.0199  中央値=1.0612  範囲[0.9156, 1.236]   σ1平均=1.152
+  DD     λ_min 平均=6.4847 ±SE 1.63  中央値=3.3667  範囲[1.867, 27.23]   σ1平均=0.9232
+  GAUSS  λ_min 平均=0.12943 ±SE 0.000598  中央値=0.12962  範囲[0.1217, 0.1324]   σ1平均=1.726

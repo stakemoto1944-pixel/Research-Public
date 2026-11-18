@@ -1,0 +1,6 @@
+iid null (400) を構築...
+qmax(unit)=0.00878 q99=0.00828
+γ=0.1 c=5.0 σ²=1.360 | OFF max|I| mean 0.0290 (min 0.0200, max 0.0496) | ON mean 1.5412 (min 1.0156) | iid閾値(qmax) 0.0119 超過OFF 40/40 | 経験null 95%点 0.0379, ON>経験max 10/10
+γ=0.1 c=10.0 σ²=1.370 | OFF max|I| mean 0.0524 (min 0.0410, max 0.0793) | ON mean 1.2997 (min 0.9709) | iid閾値(qmax) 0.0120 超過OFF 40/40 | 経験null 95%点 0.0643, ON>経験max 10/10
+γ=0.2 c=10.0 σ²=1.295 | OFF max|I| mean 0.0237 (min 0.0186, max 0.0352) | ON mean 1.0104 (min 0.8642) | iid閾値(qmax) 0.0114 超過OFF 40/40 | 経験null 95%点 0.0284, ON>経験max 10/10
+γ=0.5 c=10.0 σ²=0.428 | OFF max|I| mean 0.0145 (min 0.0096, max 0.0208) | ON mean 0.7443 (min 0.5932) | iid閾値(qmax) 0.0038 超過OFF 40/40 | 経験null 95%点 0.0181, ON>経験max 10/10

@@ -1,0 +1,11 @@
+Simulating Asymmetric Non-Markovian Spin Glass SPDE (Corrected Version)...
+Saved time steps: 2000, State dimensions: 30
+Trajectory shape: (2000, 30)
+Safety-clip activations: 0
+psi range: [-1.5271, 1.5930]
+
+--- 診断 ---
+標準偏差 σ = 0.8586
+井戸・障壁滞在率: 左0.307 / 障壁0.229 / 右0.464
+
+Phase-1 帯域積分 (pair 0,1): +0.00013  (>1e-3? False)

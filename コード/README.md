@@ -1,5 +1,15 @@
 # Code & Data — Data-Driven Identification Protocol for NEIP
 
+> **ERRATUM (2026-11-18) — noise convention of the 30-component SPDE.**
+> The SPDE integrator used by stages 1–13 (archived as v4.0) multiplied the noise
+> increment by `dt` twice, `psi += (-Q + sqrt(2 D dt) * xi) * dt`. The effective
+> diffusion constant was therefore `D*dt = 1.0e-5` (for `D = 0.02`, `dt = 5e-4`)
+> instead of `D`, and the simulated system was essentially deterministic. The
+> integrator is now the standard Euler–Maruyama step
+> `psi += -Q*dt + sqrt(2 D dt) * xi`, and **every 30-component number below has
+> been recomputed**. See §8 for what changed, what did not, and how it was found.
+> The previous results are kept unchanged in `legacy_noise_v4.0/` and in Zenodo v4.0.
+
 Reproduction package for the manuscript
 *Non-equilibrium Integrated Phases (NEIP): A Data-Driven Identification Protocol —
 Identifiability, Geometric Singularities, and the Resolution of the Computational Bottleneck*.
@@ -40,6 +50,9 @@ the scripts, and the logs are the verbatim console output of the production runs
 | Post-analysis | 1 | `post16_theory_fit.py` |
 | Figure generation | 2 | `figure_maker.py`, `figure_data_check.py` |
 | Diagnostics / pilots | 3 | `diag_exponent.py`, `pilot_floor.py`, `pilot2_harmonic.py` |
+| Integrator | 1 | `fastsim.py` (standard Euler–Maruyama; `legacy=True` reproduces the old step) |
+| Standard-noise additions | 11 | `standard_noise_additions/` (extra checks, calibration work points, integrator audits) |
+| Previous results | — | `legacy_noise_v4.0/` (old CSVs, logs and figure scripts, for comparison only) |
 | Result tables | 10 | `*_result.csv` |
 | Run logs | 8 | `logs/experiment*_log.txt`, `logs/post16_log.txt` |
 
@@ -50,10 +63,13 @@ python >= 3.11
 numpy
 scipy
 matplotlib
+numba        # strongly recommended: fastsim.py compiles the SPDE loop
 ```
 
-No compiled extensions and no external data are needed; every run is seeded and
-self-contained.
+No external data are needed; every run is seeded and self-contained. `fastsim.py`
+falls back to the same loop in plain Python if `numba` is missing (identical result,
+roughly 100x slower). The SPDE driver scripts (`experiment1`–`9`) call
+`fastsim.integrate`, so keep `fastsim.py` next to them.
 
 ## 3. How to reproduce the pipeline
 
@@ -109,6 +125,31 @@ python3 figure_maker.py
 python3 figure_data_check.py
 ```
 
+Run lengths: `experiment11_fixed_bootstrap_ci.py` is shipped with the settings that
+produced the reported numbers (`B = 500` main, `B = 200` auxiliary, 2 worker
+processes, and the S0/S1 point-estimate stages removed because the 20-seed point
+estimates come from `standard_noise_additions/pt20.py`). The earlier `B = 1000`
+setting is in `legacy_noise_v4.0/`. `experiment12_fixed_blocklen_sensitivity.py`
+was **not** re-run; the block-length sensitivity is reported by stage S3 of
+`experiment11` (`logs/experiment11_log.txt`). In `experiment13`, part B
+(record-length scaling of `lambda_min`) is replaced by
+`standard_noise_additions/exp13B_std.py`; its timing parts (FFT cost) do not depend
+on the noise convention and were not re-run.
+
+Standard-noise additions (run from `standard_noise_additions/`):
+
+```bash
+python3 audit_fastsim.py        # integrator check on a closed-form diffusion: standard 0.998, legacy 2.5e-7
+python3 pt20.py                 # 20-seed lambda_min for ROI / EQ / DD / matched Gaussian
+python3 pt40.py                 # 40-seed ROI vs DD test
+python3 cal_std.py              # estimator calibration at the standard-noise work points
+python3 exp13B_std.py           # record-length scaling of lambda_min
+python3 off_null.py             # drive-OFF reference ensemble for the Phase-1 statistic
+python3 gain_scan.py            # drive-gain scan (chaos vs circulation)
+python3 lyap.py                 # largest Lyapunov exponent at D = 0
+python3 audit_github_all.py <dir>   # audits the update line of every SPDE script in <dir>
+```
+
 `experiment10`, `11`, `12`, `13`, and `14` load `experiment4` (and `experiment13`)
 at run time from the same directory, so keep the files together and run them from
 this directory.
@@ -131,9 +172,14 @@ re-running the 276 s simulation**.
 
 | Quantity | Expected value | Where |
 | :--- | :--- | :--- |
-| ROI operating point | `lambda_min = 0.207` (seed-paired ROI/matched-Gaussian `= 1.40`) | `highdim_metric_result.csv`, `logs/experiment*_log.txt` |
-| FWER, raw vs corrected | `0.9275 -> 0.0225` (nominal 0.025) | `fwer_control_result.csv`, `logs/experiment09_log.txt` |
-| Bootstrap CI at ROI | `0.1994 +/- 0.0304`, CI width `0.037`-`0.082`, 20/20 seeds exclude zero | `bootstrap_ci_result.csv` |
+| ROI operating point | `lambda_min = 0.1737 +/- 0.0067` (20 seeds, SE); matched Gaussian `0.1294`; EQ `1.063`; DD `6.48` (median `3.37`) | `logs/pt20_lambda_min_log.txt`, `highdim_metric_result.csv` |
+| ROI vs DD (40 seeds) | ROI `0.1776 +/- 0.0052`, DD `8.10 +/- 1.33`, Welch `p = 6e-7`, Mann–Whitney `p = 1.4e-14` | `logs/pt40_roi_vs_dd_log.txt`, `pt40_perseed.csv` |
+| Dynamics at `D = 0` | largest Lyapunov exponent: ROI `+0.93`, EQ `-0.05`, DD `-0.64` (ROI is deterministic chaos) | `logs/lyapunov_D0_log.txt` |
+| FWER, raw vs corrected | `0.9275 -> 0.0225` (nominal 0.025; white-noise null, independent of the integrator) | `fwer_control_result.csv`, `logs/experiment09_log.txt` |
+| Drive-OFF reference | `max|I|` of the OFF ensemble exceeds the channel-mean iid threshold at all four grid points; ON/OFF mean ratio `25`–`53` | `OFF_null_result.csv`, `logs/off_null_log.txt` |
+| Bootstrap CI at ROI | `B = 500`, `L = 64`: mean CI width `0.047` (`0.031`–`0.061`), 20/20 seeds exclude zero; controls EQ `[0.93, 1.22]`, DD `[3.77, 4.72]`, Gauss `[0.119, 0.144]` | `bootstrap_ci_result.csv`, `logs/experiment11_log.txt` |
+| Estimator calibration | KDE `0.942x` of truth at every work point; k-NN `14.8x` at the ROI point (`24.3x` at the old point) | `estimator_calibration_result.csv`, `logs/experiment10_workpoints_log.txt` |
+| Record-length scaling | `0.138, 0.159, 0.173, 0.169, 0.177, 0.179` for `M = 3000, 5000, 8000, 12000, 16000, 20000` (6 seeds, non-monotonic) | `logs/experiment13B_scaling_log.txt` |
 | Positive control | winding number recovered to `< 0.01 %` relative error, `30/30` detections | `positive_control_result.csv`, `logs/experiment14_log.txt` |
 | Theory (P1c) | measured/predicted `0.894`-`1.118` over the resolvable range | `theory_verification16_result.csv`, `logs/post16_log.txt` |
 | Theory (R1) | fixed arm `z >= 5.3`, co-rotating arm `abs(z) <= 0.60` | same |
@@ -164,6 +210,7 @@ numbers. `post16_log.txt` ends with the summary verdict block.
 | `数値実験15_修正版_理論検証.py` | `15_theory_verification.py` |
 | `数値実験16_修正版_理論検証_再設計.py` | `16_theory_verification.py` |
 | `post16.py` | `post16_theory_fit.py` |
+| `数値実験*_修正版*.py` (2026-11-18 standard-noise reruns) | `experiment*_fixed*.py` (same public names, updated in place) |
 | `図版作成.py` | `figure_maker.py` |
 | `図版データ整合性チェック.py` | `figure_data_check.py` |
 | `相境界掃引_result.csv` | `boundary_sweep_result.csv` |
@@ -185,22 +232,23 @@ that motivated them.
 
 1. **Confidence intervals were too narrow.** The original intervals used `B = 12`
    with i.i.d. resampling, which both under-resolve the quantile tail and ignore the
-   `tau ~ 31` correlation time of the quadrature series. Recomputed with `B = 1000`
-   and a moving block of length `L = 64` over 20 seeds, the intervals are `1.6`-`3.5`
-   times wider (mean `2.4` times). **No conclusion changes**: zero is excluded in
-   `20/20` seeds. -> `experiment11`, `bootstrap_ci_result.csv`
+   `tau ~ 31` correlation time of the quadrature series. Recomputed with a moving block of length `L = 64` over 20 seeds (`B = 1000` in
+   the archived v4.0 run, `B = 500` in the standard-noise rerun), zero is excluded in
+   `20/20` seeds in both. -> `experiment11`, `bootstrap_ci_result.csv`
 2. **The k-NN estimator cannot serve as a second line of evidence.** Its
    overestimation of `lambda_min` is a *resolution floor*, not a calibration offset:
-   `24.4x` at the ROI working point, rising to `231x` as `lambda_min -> 1e-3`. All
+   `24.4x` at the old ROI working point (`14.8x` at the standard-noise ROI point),
+   rising to `231x` as `lambda_min -> 1e-3`. All
    quantitative claims rest on the calibrated KDE. -> `experiment10`,
    `estimator_calibration_result.csv`
 3. **Multiplicity in Phase 1 was not controlled.** Raw family-wise error was
    `0.9275`; with a max-statistic correction it is `0.0225` against a nominal `0.025`.
    -> `experiment9`, `fwer_control_result.csv`
-4. **The published record-length scaling was wrong.** The endpoint is `0.204`, not
-   `0.275`, and the dependence is **non-monotonic**: `0.1691`, `0.1772`, `0.1734`,
-   `0.1850`, `0.1974`, `0.2036` for `M = 3000 ... 20000` (total change `+20 %`).
-   -> `experiment13`, `scaling_result.csv`
+4. **The published record-length scaling was wrong.** The endpoint is not `0.275`;
+   with the standard-noise integrator it is `0.179` (6 seeds), and the dependence is
+   **non-monotonic**: `0.138`, `0.159`, `0.173`, `0.169`, `0.177`, `0.179` for
+   `M = 3000 ... 20000` (total change `+30 %`). (Archived v4.0 values with the
+   old integrator: `0.169 ... 0.204`.) -> `standard_noise_additions/exp13B_std.py`
 5. **The theory was superseded, and the old form is refuted.** The first draft's
    `g_theta_theta = omega_1^2 / (2 D_theta^2)` turned out to be the `omega_0 -> 0`
    limit of the correct expression
@@ -226,9 +274,62 @@ transfers to the many-body system studied here; the `omega_0`-dependent scaling 
 - Verdict strings are **computed from the measured values at run time**, never
   hard-coded, so a changed measurement changes the verdict rather than silently
   contradicting it.
-- `figure_data_check.py` verifies that the figures agree with the shipped result
-  tables (`ALL PASS` as of 2026-09-16).
+- `figure_maker_standard.py` regenerates the figures from the standard-noise tables. The
+  old `figure_maker.py` / `figure_data_check.py` (which checked the old tables, `ALL PASS`
+  as of 2026-09-16) are in `legacy_noise_v4.0/` and do not apply to the current CSVs.
 - Requirement versions used for the archived runs are recorded in `logs/`.
+
+## 8. Erratum: noise convention of the 30-component SPDE (2026-11-18)
+
+**What was wrong.** In `experiment1`–`9` (and everything that loads `experiment4`,
+i.e. `10`–`13`) the update was
+`psi += (-Q + np.sqrt(2.0*D*DT) * np.random.randn(N)) * DT`. The noise already carries
+`sqrt(DT)`; multiplying by `DT` again makes its variance per step `2 D DT^3`. The
+effective diffusion constant is `D*DT = 1.0e-5` (a factor `5e-4` below the nominal
+`D = 0.02`), and the dynamics of the ROI condition are deterministic chaos. The
+comment in the old code ("`dt` explicitly multiplied = regular continuous-time
+discretisation") was incorrect.
+
+**How it was found.** A closed-form audit of the update line (`standard_noise_additions/`):
+for free diffusion the ratio `Var(psi_T) / (2 D T)` is `1` for a correct integrator.
+
+| Update | Free diffusion ratio | Verdict |
+| :--- | :--- | :--- |
+| standard EM (`fastsim.integrate`, `legacy=False`) | `0.998` | pass |
+| old step (`legacy=True`, and `experiment1`–`9` as archived in v4.0) | `2.5e-7 = dt^2` | fail |
+| `experiment14`, `15_`, `16_`, `pilot_*`, `diag_exponent` | standard EM form (`0.996`) | pass |
+
+(`logs/audit_fastsim_log.txt`, `logs/audit_legacy_code_log.txt`.)
+
+**What is not affected.** `experiment14` (positive control), `15_theory_verification`,
+`16_theory_verification`, `post16`, the pilots, the estimator calibration on
+synthetic densities (`experiment10`, apart from the added work points), and the FWER
+control (white-noise null) do not use the 30-component integrator.
+
+**What changed in the 30-component results** (old archive -> standard noise):
+
+| Quantity | Old (v4.0) | Standard noise |
+| :--- | :--- | :--- |
+| ROI `lambda_min` (20 seeds) | `0.1994` | `0.1737 +/- 0.0067` |
+| matched Gaussian (20 seeds) | see `legacy_noise_v4.0/` | `0.1294` |
+| DD `lambda_min` (20 seeds) | see `legacy_noise_v4.0/` | `6.48` (median `3.37`) |
+| Bootstrap CI | `B=1000`, 20/20 exclude zero | `B=500`, 20/20 exclude zero, mean width `0.047` |
+| Record-length endpoint (`M = 20000`) | `0.204` | `0.179` |
+| k-NN over-estimate at the ROI point | `24.4x` | `14.8x` |
+
+**What the conclusion is now.** The qualitative picture survives: `lambda_min` stays
+positive and finite in every condition, the ROI is separated from the equilibrium and
+dissipative controls, and no multi-order gap to the matched Gaussian appears. The
+interpretation changes: with `D = 0` the ROI has a largest Lyapunov exponent of
+`+0.93`, i.e. the near-deterministic dynamics are chaotic, while EQ and DD relax
+(`-0.05`, `-0.64`). The drive gain is the only control parameter that moves the system
+between regimes (`standard_noise_additions/gain_scan.py`). The manuscript text has been
+rewritten accordingly.
+
+**Provenance.** `legacy_noise_v4.0/` keeps the old CSVs, logs and figure scripts for
+comparison; they were produced by the old integrator and should not be cited as
+results of the stated model. Zenodo v4.0 contains the old code; a new version of the
+concept DOI should be created for this package (see the note at the end of this file).
 
 ## License
 
@@ -270,3 +371,5 @@ code that produced the numbers they cite. Always verify the **file list** before
 publishing: the concept DOI points at the latest version, so a version published
 without the code archive makes the archive un-reproducible for anyone who
 follows the concept DOI (this is exactly what happened in v2.0).
+
+> **Planned:** v5.0 of the concept DOI will carry this standard-noise package and the corrected manuscript; until it is published, v4.0 contains the old integrator (see §8).
