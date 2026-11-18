@@ -1,3 +1,5 @@
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import fastsim as _fast
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -53,17 +55,8 @@ def simulate(coupling_scale, D, gamma, c_mem, T, burnin, seed=42, asym_gain=1.0)
     saved_time = np.linspace(0, T, saved_steps)
     save_idx = 0
     diverged = False
-    for t in range(steps):
-        xi = psi ** 3 - psi - np.dot(J_sym, psi) - np.dot(J_asym, psi)
-        Q += (-gamma * Q + c_mem * xi) * DT
-        psi += (-Q + np.sqrt(2.0 * D * DT) * np.random.randn(N)) * DT
-        psi = np.clip(psi, -CLIP_BOUND, CLIP_BOUND)
-        if np.any(np.isnan(psi)) or np.any(np.isinf(psi)):
-            diverged = True
-            break
-        if t % subsample == 0 and save_idx < saved_steps:
-            history[save_idx] = psi
-            save_idx += 1
+    # Standard Euler-Maruyama (psi += -Q dt + sqrt(2 D dt) xi). Implemented in fastsim.py.
+    save_idx, _ch, diverged = _fast.integrate(psi, Q, J_sym, J_asym, gamma, c_mem, D, DT, steps, subsample, saved_steps, CLIP_BOUND, False, int(np.random.randint(1, 2**31 - 1)), history)
     mask = saved_time >= burnin
     return saved_time[mask], history[mask], diverged
 

@@ -1,9 +1,11 @@
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import fastsim as _fast
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 論文（４）数値実験（３）：因果同定とロバスト性検証（介入・ノイズ掃引） — 修正版
 
-修正版SPDE（論文に整合: xi = psi**3 - psi - J_sym@psi - J_asym@psi, psi += (-Q+noise)*dt）で、
+修正版SPDE（論文に整合: xi = psi**3 - psi - J_sym@psi - J_asym@psi, psi += -Q*dt + sqrt(2 D dt)*randn）で、
 実験2で確定したROI点（γ=0.1, c_mem=5.0, cs=1.0, D=0.05, T=300, burn-in=100）を基準に:
 
   A.1 駆動介入 : 非対称結合 J_asym のゲイン λ を掃引 → 循環指標 |I| が λ に追従するかを検定
@@ -50,18 +52,9 @@ def simulate(coupling_scale, D, gamma, c_mem, T, burnin, seed=42, asym_gain=1.0,
     save_idx = 0
     diverged = False
     clip_hits = 0
-    for t_idx in range(steps):
-        xi = psi ** 3 - psi - np.dot(J_sym, psi) - np.dot(J_asym, psi)
-        Q += (-gamma * Q + c_mem * xi) * DT
-        psi += (-Q + np.sqrt(2.0 * D * DT) * np.random.randn(N)) * DT
-        clip_hits += int(np.sum(np.abs(psi) > CLIP_BOUND))
-        psi = np.clip(psi, -CLIP_BOUND, CLIP_BOUND)
-        if np.any(np.isnan(psi)) or np.any(np.isinf(psi)):
-            diverged = True
-            break
-        if t_idx % subsample == 0 and save_idx < saved_steps:
-            history[save_idx] = psi
-            save_idx += 1
+    # Standard Euler-Maruyama (psi += -Q dt + sqrt(2 D dt) xi). Implemented in fastsim.py.
+    save_idx, _ch, diverged = _fast.integrate(psi, Q, J_sym, J_asym, gamma, c_mem, D, DT, steps, subsample, saved_steps, CLIP_BOUND, False, int(np.random.randint(1, 2**31 - 1)), history)
+    clip_hits += int(_ch)
     mask = saved_time >= burnin
     return saved_time[mask], history[mask], clip_hits, diverged
 

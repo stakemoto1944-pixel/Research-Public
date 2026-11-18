@@ -1,3 +1,5 @@
+import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import fastsim as _fast
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,7 +7,7 @@
 
 修正内容（旧実装 vs 修正版）:
   1. 駆動項: xi = psi**3 - psi - J_sym@psi - J_asym@psi（論文の括弧内に符号整合）
-  2. 更新式: psi += (-Q + noise) * dt（dt を明示的に掛ける＝正則な連続時間離散化）
+  2. 更新式: psi += -Q*dt + sqrt(2 D dt)*randn（標準 Euler–Maruyama。旧版は noise に dt を二重に掛けていた: README §8）
 
 出力: 軌道 + 診断（クリップ回数 / 状態範囲 / 井戸滞在率 / dt収束性）
 """
@@ -53,19 +55,9 @@ def simulate_corrected(seed=SEED, T_run=T, dt=DT, N_spin=N, scale=SCALE, D_noise
     clip_hits = 0
 
     # 3. Euler–Maruyama 積分（修正版）
-    for t_idx in range(steps):
-        xi = psi**3 - psi - np.dot(J_sym, psi) - np.dot(J_asym, psi)  # 論文の括弧内 (δH/δψ − Jψ)
-        Q += (-gamma * Q + c_mem * xi) * dt
-        noise = np.sqrt(2.0 * D_noise * dt) * np.random.randn(N_spin)
-        psi += (-Q + noise) * dt  # dt を明示的に掛ける
-        clip_hits += int(np.sum(np.abs(psi) > CLIP_BOUND))
-        psi = np.clip(psi, -CLIP_BOUND, CLIP_BOUND)
-        if np.any(np.isnan(psi)) or np.any(np.isinf(psi)):
-            diverged = True
-            break
-        if t_idx % subsample == 0 and save_idx < saved_steps:
-            history[save_idx] = psi
-            save_idx += 1
+    # Standard Euler-Maruyama (psi += -Q dt + sqrt(2 D dt) xi). Implemented in fastsim.py.
+    save_idx, _ch, diverged = _fast.integrate(psi, Q, J_sym, J_asym, gamma, c_mem, D_noise, dt, steps, subsample, saved_steps, CLIP_BOUND, False, int(np.random.randint(1, 2**31 - 1)), history)
+    clip_hits += int(_ch)
     return saved_time[:save_idx], history[:save_idx], clip_hits, diverged
 
 

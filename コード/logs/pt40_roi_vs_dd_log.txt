@@ -1,0 +1,48 @@
+seed 0
+seed 1
+seed 2
+seed 3
+seed 4
+seed 5
+seed 6
+seed 7
+seed 8
+seed 9
+seed 10
+seed 11
+seed 12
+seed 13
+seed 14
+seed 15
+seed 16
+seed 17
+seed 18
+seed 19
+seed 20
+seed 21
+seed 22
+seed 23
+seed 24
+seed 25
+seed 26
+seed 27
+seed 28
+seed 29
+seed 30
+seed 31
+seed 32
+seed 33
+seed 34
+seed 35
+seed 36
+seed 37
+seed 38
+seed 39
+ROI n=40 mean 0.1776 SE 0.0052 median 0.1750 range [0.122,0.255]
+DD n=40 mean 8.1004 SE 1.3320 median 4.0099 range [1.786,27.379]
+GAUSS n=40 mean 0.1296 SE 0.0004 median 0.1295 range [0.122,0.135]
+ROI vs DD: Welch t=-5.95 p=6.12e-07 | log-Welch t=-24.51 p=1.1e-26 | MWU p=1.44e-14
+ROI vs GAUSS: Welch t=9.27 p=1.84e-11 | log-Welch t=10.32 p=7.67e-13 | MWU p=2.52e-13
+seeds 0-20 ROI vs DD Welch p=0.00104
+seeds 20-40 ROI vs DD Welch p=0.000207
+DD中央値/ROI中央値 = 22.9 ; ROI<DD の割合(全ペア)=1.000

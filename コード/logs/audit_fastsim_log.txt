@@ -1,0 +1,2 @@
+standard (legacy=False)    Var/(2DT) = 9.9837e-01  -> 合格
+legacy   (legacy=True)     Var/(2DT) = 2.4959e-07  -> 不合格 (Δt²=2.50e-07)

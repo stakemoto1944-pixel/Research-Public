@@ -28,7 +28,7 @@
 【S4】他条件: EQ / DD / GAUSS、6シード、B=1000、L=64
 
 実行: python3 experiment11_fixed_bootstrap_ci.py [--quick]
-出力: bootstrap_ci_result.csv / experiment11_log.txt
+出力: bootstrap_ci_result.csv / 実験11_log.txt
 """
 import argparse
 import csv
@@ -40,7 +40,7 @@ from multiprocessing import Pool
 import numpy as np
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-N_CMP = 5                       # プロセス数（実測: 7でも加速は2.5倍止まり=メモリ帯域律速）
+N_CMP = 2                       # プロセス数（実測: 7でも加速は2.5倍止まり=メモリ帯域律速）
 
 _spec = importlib.util.spec_from_file_location(
     "e4", os.path.join(_HERE, "experiment4_fixed_info_geometry.py"))
@@ -53,8 +53,8 @@ SEEDS = list(range(20))                 # 0..19（現行の {0,1,2,3,42,100} を
 SEEDS_AUX = [0, 1, 42]                  # 感度・他条件用の補助シード
 N_EVAL_MAIN = 1000                      # 点推定は5000、bootstrapは1000（§S0 で妥当性確認）
 N_EVAL_POINT = 5000
-B_MAIN = 1000
-B_AUX = 500
+B_MAIN = 500
+B_AUX = 200
 L_MAIN = 64                             # 2τ（τ≈30）
 L_SENS = [1, 16, 256]
 CONDS = ["ROI", "EQ", "DD", "GAUSS"]
@@ -197,41 +197,7 @@ def main():
     print(f"  参考: Kunsch 式 2τn^(1/3) は L≈{int(2*ta.mean()*20000**(1/3))} で"
           f"ブロック数わずか{20000//int(2*ta.mean()*20000**(1/3))}個となるため不採用", flush=True)
 
-    # ---- S0: n_eval の妥当性（点推定との一致確認） ----
-    print("\nS0. n_eval 感度（点推定との一致確認）", flush=True)
-    s0_seed = 42 if ("ROI", 42) in trs else SEEDS[0]
-    for ne in [1000, 2000, N_EVAL_POINT, 10000]:
-        r = E4.compute_geometry(trs[("ROI", s0_seed)], h_scale=1.0, n_eval=ne)
-        print(f"    n_eval={ne:>6}: λ_min={r['lam_min']:.5f}  κ={r['kappa']:.4f}", flush=True)
-
-    # ---- S1: 点推定 4条件 × 20シード ----
-    print(f"\nS1. 点推定（4条件 × {len(SEEDS)}シード, n_eval={N_EVAL_POINT}）", flush=True)
     point = {}
-    for cond in CONDS:
-        vals = {k: [] for k in ("det", "lam_min", "kappa")}
-        for s in SEEDS:
-            r = E4.compute_geometry(trs[(cond, s)], h_scale=1.0, n_eval=N_EVAL_POINT)
-            for k in vals:
-                vals[k].append(r[k])
-        point[cond] = vals
-        a = np.array(vals["lam_min"])
-        kk = np.array(vals["kappa"])
-        d = np.array(vals["det"])
-        tcrit = 2.093                                   # t_{0.975,19}
-        print("    {:>5}: det g={:.5f}±{:.5f}  λ_min={:.5f}±{:.5f}  κ={:.4f}±{:.4f}  "
-              "[最小λ_min={:.5f}]".format(
-                  cond, d.mean(), d.std(ddof=1)/np.sqrt(len(d)),
-                  a.mean(), a.std(ddof=1)/np.sqrt(len(a)),
-                  kk.mean(), kk.std(ddof=1)/np.sqrt(len(kk)), a.min()), flush=True)
-        se = a.std(ddof=1)/np.sqrt(len(a))
-        print("           → 20シードでの 95% CI（平均±t·SE）= [{:.5f}, {:.5f}]  "
-              "ゼロ除外: {}".format(a.mean()-tcrit*se, a.mean()+tcrit*se,
-                                      a.mean()-tcrit*se > 0), flush=True)
-        for s, a_, k_, d_ in zip(SEEDS, a, kk, d):
-            rows.append(dict(stage="S1_point", cond=cond, seed=int(s), L=0, B=0,
-                             n_eval=N_EVAL_POINT, point_det=float(d_),
-                             point_lam=float(a_), point_kap=float(k_),
-                             tau=float(taus.get(s, np.nan))))
 
     with Pool(N_CMP, initializer=_init, initargs=(trs,)) as pool:
         # ---- S2: 主解析 ROI ブロックbootstrap ----

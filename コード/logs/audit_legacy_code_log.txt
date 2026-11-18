@@ -1,0 +1,13 @@
+ファイル                                            行  Var/(2DT)    判定
+experiment1_fixed.py                           60  2.400e-07    不合格
+experiment2_fixed_param_search.py              52  2.400e-07    不合格
+experiment3_fixed_intervention_noise.py        56  2.400e-07    不合格
+experiment4_fixed_info_geometry.py             62  2.400e-07    不合格
+experiment5_fixed_boundary_sweep.py            63  2.400e-07    不合格
+experiment6_fixed_knn_crosscheck.py            59  2.400e-07    不合格
+experiment7_fixed_highdim_metric.py            55  2.400e-07    不合格
+experiment8_fixed_axes_phase.py                59  2.400e-07    不合格
+experiment9_fixed_fwer_control.py              79  2.400e-07    不合格
+
+検査した更新式（代表）: psi += (-Q + noise) * dt
+Δt²=2.500e-07（比/Δt² ≈ 0.960）

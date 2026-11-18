@@ -1,0 +1,10 @@
+積分器監査（解析解との比。1.000 が正しい）
+更新式            | T1 自由拡散 Var/(2Dt)      | T2 OU 定常分散 /(D/θ)        | 判定
+standard       |                 0.9911 |                   0.9975 | 合格
+legacy(Δt二重)   |                 0.0000 |                   0.0000 | 不合格
+√Δt欠落          |              1982.1116 |                1994.9413 | 不合格
+
+T3 Δt依存（T1 の比）: legacy の比は Δt² に比例して縮み（比/Δt² ≈ 1）、standard は Δt によらず 1
+  Δt=2e-03: standard 0.9955  legacy 3.982e-06  legacy/Δt² = 0.995
+  Δt=1e-03: standard 1.0044  legacy 1.004e-06  legacy/Δt² = 1.004
+  Δt=5e-04: standard 0.9851  legacy 2.463e-07  legacy/Δt² = 0.985

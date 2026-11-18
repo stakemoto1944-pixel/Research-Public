@@ -15,6 +15,16 @@ Research publications and supplementary documents by **Satoshi Takemoto (竹本 
 > review, and no referee report exists for any of them.** The next venue has not been
 > chosen. The full record is in [Submission history](#submission-history).
 
+> **Erratum (2026-11-18).** The 30-component SPDE integrator used for the numerical
+> results in all earlier versions of the manuscript and in Zenodo v4.0 applied the
+> time step to the noise twice (`psi += (-Q + sqrt(2 D dt) xi) dt`), so the effective
+> diffusion constant was `D*dt` instead of `D`. The integrator has been corrected to
+> standard Euler–Maruyama and all 30-component results have been recomputed; see
+> [`コード/README.md`](コード/README.md) §8. The previous results are kept in
+> `コード/legacy_noise_v4.0/`. Results that do not use this integrator (positive
+> control, theory verification, estimator calibration on synthetic densities, FWER
+> control) are unchanged.
+
 ---
 
 ## 1. Main Papers (Zenodo preprints)
@@ -76,8 +86,9 @@ referee report.**
 
 > **The 2026-10-23 version is the current manuscript and supersedes all earlier
 > files.** It is the PDF submitted to JSTAT, with the title above. Its reported
-> numbers are identical to the 2026-10-04 version, so the deposited code reproduces
-> both.
+> numbers are identical to the 2026-10-04 version, so the code deposited in v4.0
+> reproduces both. Those numbers were produced by the integrator described in the
+> erratum above; the corrected numbers are in the current `コード/`.
 
 > **The 2026-10-04 PRE submission version remains here as a record, not as the
 > current text.** It is the file submitted to *Physical Review E* (`EX12494`) and
@@ -88,8 +99,8 @@ referee report.**
 > several quantitative claims and replaced the original theoretical prediction; the
 > 2026-10-04 file reformatted the manuscript to journal style (single unstructured
 > abstract, PACS and keywords, journal-style reference list via BibTeX). None of
-> these changes alter the reported numbers, so the deposited code reproduces every
-> version. The corrections are listed in [`コード/README.md`](コード/README.md) §6.
+> these changes alter the reported numbers, so the code deposited in v4.0
+> reproduces every version (with the integrator caveat in the erratum above). The corrections are listed in [`コード/README.md`](コード/README.md) §6.
 > The superseded files are retained only as a record; they are **not** the citable
 > versions.
 
@@ -117,9 +128,11 @@ Slide-style explanations and theory documents:
 ## 3. Code & Data (`コード/`)
 
 Reproduction package for the manuscript: the driver scripts that
-produced every number, the raw result tables, and the verbatim stdout log of each
-production run. The reported numbers are unchanged across the 2026-10-04 (PRE) and
-2026-10-23 (JSTAT) versions, so the package reproduces both.
+produced every number in the current manuscript, the raw result tables, and the
+verbatim stdout log of each run. The numerical results of the 30-component SPDE
+(stages 1–13) were recomputed on 2026-11-18 with a corrected integrator (see the
+erratum above). The package of Zenodo v4.0, which reproduces the earlier numbers
+(2026-10-04 PRE and 2026-10-23 JSTAT versions), is superseded for these stages.
 
 - **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
