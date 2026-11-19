@@ -86,6 +86,14 @@ referee report.**
 | JSTAT submission version (superseded: numbers from the earlier integrator; retained as the submission record) | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
 | **Revised manuscript, standard-noise results (current manuscript)** | 2026-11-19 | [`論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf`](論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf) |
 
+> **Preprint (2026-11-20).** The intermediate report *What does Fisher-metric
+> degeneracy measure as a detector of nonequilibrium phases? A test on a
+> 30-component system* is deposited on Zenodo as a **Preprint** (not peer
+> reviewed, not under consideration at any journal):
+> [10.5281/zenodo.24382246](https://doi.org/10.5281/zenodo.24382246). It states
+> what the Fisher-metric criterion can and cannot detect; the code and data
+> behind it are in the software record above.
+
 > **The 2026-11-19 version is the current manuscript and supersedes all earlier
 > files.** It reports the 30-component results recomputed with the standard
 > Euler–Maruyama integrator (see the erratum above). The 2026-10-23 PDF is the
