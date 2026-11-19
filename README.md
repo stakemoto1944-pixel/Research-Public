@@ -210,11 +210,13 @@ Research-Public/
 If you use the code or data, please cite the work you actually used and link to
 this repository. The manuscript has **no journal DOI yet** — its most recent
 submission (to *JSTAT*, `JSTAT_044P_1026`) was desk-rejected on 2026-11-14, and no
-venue has been chosen for the next one. The **2026-10-23 JSTAT submission version** is the
-current text and supersedes the 2026-10-04 PRE submission version and the two earlier
-drafts. The quantitative corrections listed in [`コード/README.md`](コード/README.md)
+venue has been chosen for the next one. The **2026-11-19 revised manuscript**
+(standard-noise results) is the current text and supersedes the 2026-10-23 JSTAT
+submission version, the 2026-10-04 PRE submission version and the two earlier drafts. The quantitative corrections listed in [`コード/README.md`](コード/README.md)
 §6 are not optional — the first draft's numbers and its original theoretical
 prediction have both been withdrawn. Cite the concept DOI
 `10.5281/zenodo.23050818` so that your reference resolves to the complete
-archive; the current manuscript is archived there as v4.0
-([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)).
+archive; v4.0
+([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)) archives the
+2026-10-23 JSTAT version with the earlier integrator; the current manuscript and the
+standard-noise code are planned for v5.0.
