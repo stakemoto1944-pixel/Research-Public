@@ -72,9 +72,10 @@ referee report.**
 
 - **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
-  is **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
-  published 2026-10-26, which bundles the code archive **and** the JSTAT-submission
-  manuscript PDF. v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347)
+  is **v5.0** = [10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781),
+  published 2026-11-19, which bundles the standard-noise code archive **and** the
+  revised manuscript PDF. v4.0 = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)
+  (2026-10-26) holds the JSTAT-submission PDF and the earlier integrator. v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347)
   retains the PRE-submission PDF)
 
 | Version | Date | File |
@@ -82,13 +83,15 @@ referee report.**
 | First draft (superseded) | 2026-09-19 | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
 | Revised (superseded) | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
 | PRE submission version (superseded as a manuscript; retained as the PRE record) | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
-| **JSTAT submission version (current manuscript)** | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
+| JSTAT submission version (superseded: numbers from the earlier integrator; retained as the submission record) | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
+| **Revised manuscript, standard-noise results (current manuscript)** | 2026-11-19 | [`論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf`](論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf) |
 
-> **The 2026-10-23 version is the current manuscript and supersedes all earlier
-> files.** It is the PDF submitted to JSTAT, with the title above. Its reported
-> numbers are identical to the 2026-10-04 version, so the code deposited in v4.0
-> reproduces both. Those numbers were produced by the integrator described in the
-> erratum above; the corrected numbers are in the current `コード/`.
+> **The 2026-11-19 version is the current manuscript and supersedes all earlier
+> files.** It reports the 30-component results recomputed with the standard
+> Euler–Maruyama integrator (see the erratum above). The 2026-10-23 PDF is the
+> version submitted to JSTAT; its numbers (identical to the 2026-10-04 version) were
+> produced by the earlier integrator, which the code deposited in v4.0 reproduces.
+> The corrected numbers are in the current `コード/`.
 
 > **The 2026-10-04 PRE submission version remains here as a record, not as the
 > current text.** It is the file submitted to *Physical Review E* (`EX12494`) and
@@ -116,7 +119,7 @@ Slide-style explanations and theory documents:
 | :--- | :--- |
 | `NEIP_1.pdf` | NEIP basics & NEIC 4 requirements (Zenodo 22088694) |
 | `NEEP_2.pdf` | Extended Integrated Field Equation & macroscopic coherence (Zenodo 22138906) |
-| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (manuscript; JSTAT submission version) |
+| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (slides based on the JSTAT submission version; numbers from the earlier integrator, not updated) |
 | `NEIP_Systematization.pdf` | NEIP systematization overview (Zenodo 22682953) |
 | `統合意識理論１.pdf` | Consciousness as a nonequilibrium critical predictive information field (Ver.1.1.0) |
 | `精神の非平衡統計場理論.pdf` | Spin-glass hierarchical self, quantum criticality, semantic phase transition (Ver.1.1.0) |
@@ -136,8 +139,9 @@ erratum above). The package of Zenodo v4.0, which reproduces the earlier numbers
 
 - **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
-  version — currently **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
-  which bundles the JSTAT-submission manuscript PDF; v3.0 = `10.5281/zenodo.23135347`
+  version — currently **v5.0** = [10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781),
+  which bundles the revised standard-noise manuscript PDF; v4.0 =
+  `10.5281/zenodo.23650287` holds the JSTAT-submission PDF (earlier integrator); v3.0 = `10.5281/zenodo.23135347`
   keeps the PRE-submission PDF)
 - **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
   execution order, expected values, and a list of the corrections included.
@@ -208,11 +212,14 @@ Research-Public/
 If you use the code or data, please cite the work you actually used and link to
 this repository. The manuscript has **no journal DOI yet** — its most recent
 submission (to *JSTAT*, `JSTAT_044P_1026`) was desk-rejected on 2026-11-14, and no
-venue has been chosen for the next one. The **2026-10-23 JSTAT submission version** is the
-current text and supersedes the 2026-10-04 PRE submission version and the two earlier
-drafts. The quantitative corrections listed in [`コード/README.md`](コード/README.md)
+venue has been chosen for the next one. The **2026-11-19 revised manuscript**
+(standard-noise results) is the current text and supersedes the 2026-10-23 JSTAT
+submission version, the 2026-10-04 PRE submission version and the two earlier drafts. The quantitative corrections listed in [`コード/README.md`](コード/README.md)
 §6 are not optional — the first draft's numbers and its original theoretical
 prediction have both been withdrawn. Cite the concept DOI
 `10.5281/zenodo.23050818` so that your reference resolves to the complete
-archive; the current manuscript is archived there as v4.0
-([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)).
+archive; v5.0
+([10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781)) archives the current manuscript and the standard-noise
+code, and v4.0
+([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)) the 2026-10-23
+JSTAT version with the earlier integrator.

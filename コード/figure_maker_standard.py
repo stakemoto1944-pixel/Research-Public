@@ -1,9 +1,11 @@
+# Regenerates Fig1-5 from the shipped standard-noise tables. Run from this directory.
+# Fig1-3 use values transcribed from logs/experiment2..5 (hard-coded below); Fig4/5 read the CSVs.
 import numpy as np, pandas as pd, matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-R='rerun_standard/'
+R=''
 plt.rcParams.update({'font.size':10,'axes.grid':True,'grid.alpha':.3,'figure.dpi':150})
-O='figs/'
+O=''
 # Fig1 screening
 gam=[0.1,0.2,0.5,1.0,2.0]
 mx={0.1:[.04479,.17325,.68791,1.39306,1.22916],0.2:[.01844,.05756,.22894,.86362,1.14114],
@@ -40,7 +42,7 @@ a.axvspan(0.2,0.5,color='gray',alpha=.15)
 b.semilogy(cs,lc,'o-',color='C3');b.set_xlabel('c_s');b.set_title('λ_min vs c_s (γ=0.1)')
 fig.tight_layout();fig.savefig(O+'Fig3_BoundarySweeps.png',dpi=200)
 # Fig4 PCA
-d=pd.read_csv(R+'高次元計量_result.csv')
+d=pd.read_csv(R+'highdim_metric_result.csv')
 m=d.groupby(['gamma','d']).lam.mean().unstack()
 fig,(a,b)=plt.subplots(1,2,figsize=(9,3.8))
 for i,gm in enumerate(m.index): a.semilogy(m.columns,m.loc[gm],'o-',color=f'C{i}',label=f'γ={gm}')
@@ -51,7 +53,7 @@ gg=[0.1,0.2,0.5];b.plot(gg,[1.04,1.04,1.03],'o-',label='d=3');b.plot(gg,[.68,.59
 b.axhline(1,color='k',lw=.8,ls='--');b.set_ylim(0,1.3);b.set_xlabel('γ');b.set_ylabel('λ_min emp / matched Gaussian');b.legend();b.set_title('seed 42')
 fig.tight_layout();fig.savefig(O+'Fig4_HighDim_PCA.png',dpi=200)
 # Fig5 axes
-a_=pd.read_csv(R+'境界軸位相_result.csv')
+a_=pd.read_csv(R+'axis_phase_result.csv')
 fig,(a,b,c)=plt.subplots(1,3,figsize=(12,3.8))
 A=a_[a_.axis=='A']
 for gm in sorted(A.gamma.unique()):

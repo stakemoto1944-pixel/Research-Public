@@ -25,8 +25,10 @@ Identifiability, Geometric Singularities, and the Resolution of the Computationa
 > every version from the 2026-09-30 revision onward (the 2026-09-19 first draft's
 > numbers were corrected on 2026-09-30); the submission record is in the repository
 > [README](../README.md#submission-history). The code and the current manuscript
-> are archived as **v4.0** of the concept DOI
-> ([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287), 2026-10-26).
+> are archived as **v5.0** of the concept DOI
+> ([10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781), 2026-11-19); v4.0
+> ([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)) holds the earlier
+> integrator.
 
 Everything in this directory is the **actual code that produced the numbers in the
 manuscript**, together with the raw result tables and the complete stdout logs of
@@ -68,7 +70,7 @@ numba        # strongly recommended: fastsim.py compiles the SPDE loop
 
 No external data are needed; every run is seeded and self-contained. `fastsim.py`
 falls back to the same loop in plain Python if `numba` is missing (identical result,
-roughly 100x slower). The SPDE driver scripts (`experiment1`–`9`) call
+much slower). The SPDE driver scripts (`experiment1`–`9`) call
 `fastsim.integrate`, so keep `fastsim.py` next to them.
 
 ## 3. How to reproduce the pipeline
@@ -328,8 +330,7 @@ rewritten accordingly.
 
 **Provenance.** `legacy_noise_v4.0/` keeps the old CSVs, logs and figure scripts for
 comparison; they were produced by the old integrator and should not be cited as
-results of the stated model. Zenodo v4.0 contains the old code; a new version of the
-concept DOI should be created for this package (see the note at the end of this file).
+results of the stated model. Zenodo v4.0 contains the old code; this package is archived as v5.0.
 
 ## License
 
@@ -341,10 +342,16 @@ Code and data are released under the **CC BY 4.0** license
 
 - DOI (cite this): [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   — concept DOI, always resolves to the latest version
-- Current latest: **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
-  published 2026-10-26 as *Software*, CC BY 4.0
-- Archive file: `NEIP_protocol_code_v1.zip` (164,045 bytes,
-  md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`) — identical in every version
+- Current latest: **v5.0** = [10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781),
+  published 2026-11-19 as *Software*, CC BY 4.0
+- Archive file in v5.0: `NEIP_protocol_code_v5.zip` (742,610 bytes,
+  md5 `e937a1c0e0a9933c155da8ae7d87227d`); manuscript
+  `NEIP_protocol_manuscript_standard_noise_20261119.pdf`
+  (md5 `448f66f9cd9cc155862171ad1c0342c4`), also in the GitHub mirror —
+  [`../論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf`](../論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf)
+- v4.0 = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)
+  (2026-10-26, *Software*, CC BY 4.0): archive file `NEIP_protocol_code_v1.zip`
+  (164,045 bytes, md5 `dc19d89eef8b3d1ffc5c1c75eddb5b91`), identical in v1.0–v4.0
 - Manuscript file in v4.0: `NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`,
   the manuscript submitted to *JSTAT* on 2026-10-23 (`JSTAT_044P_1026`); also in the
   GitHub mirror —
@@ -363,7 +370,8 @@ Version history of the concept DOI:
 | v1.0 | `…zenodo.23050819` | 2026-09-30 | code archive |
 | v2.0 | `…zenodo.23134914` | 2026-10-04 | manuscript PDF only — **code archive missing; do not cite** |
 | v3.0 | `…zenodo.23135347` | 2026-10-04 | code archive + PRE-submission manuscript PDF |
-| **v4.0 (latest)** | `…zenodo.23650287` | 2026-10-26 | code archive + JSTAT-submission manuscript PDF |
+| v4.0 | `…zenodo.23650287` | 2026-10-26 | code archive + JSTAT-submission manuscript PDF (earlier integrator) |
+| **v5.0 (latest)** | `…zenodo.24361781` | 2026-11-19 | standard-noise code archive + revised manuscript PDF |
 
 To archive a later revision, create a **new version** of the concept DOI rather
 than editing an existing record, so that citations continue to resolve to the
@@ -372,4 +380,3 @@ publishing: the concept DOI points at the latest version, so a version published
 without the code archive makes the archive un-reproducible for anyone who
 follows the concept DOI (this is exactly what happened in v2.0).
 
-> **Planned:** v5.0 of the concept DOI will carry this standard-noise package and the corrected manuscript; until it is published, v4.0 contains the old integrator (see §8).
