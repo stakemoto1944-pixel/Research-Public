@@ -68,7 +68,7 @@ numba        # strongly recommended: fastsim.py compiles the SPDE loop
 
 No external data are needed; every run is seeded and self-contained. `fastsim.py`
 falls back to the same loop in plain Python if `numba` is missing (identical result,
-roughly 100x slower). The SPDE driver scripts (`experiment1`–`9`) call
+much slower). The SPDE driver scripts (`experiment1`–`9`) call
 `fastsim.integrate`, so keep `fastsim.py` next to them.
 
 ## 3. How to reproduce the pipeline
