@@ -82,13 +82,15 @@ referee report.**
 | First draft (superseded) | 2026-09-19 | [`論文/NEIP_20260917zenodo_new.pdf`](論文/NEIP_20260917zenodo_new.pdf) |
 | Revised (superseded) | 2026-09-30 | [`論文/NEIP_data-driven-protocol_20260930_revised.pdf`](論文/NEIP_data-driven-protocol_20260930_revised.pdf) |
 | PRE submission version (superseded as a manuscript; retained as the PRE record) | 2026-10-04 | [`論文/NEIP_protocol_manuscript_PRE_submission.pdf`](論文/NEIP_protocol_manuscript_PRE_submission.pdf) |
-| **JSTAT submission version (current manuscript)** | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
+| JSTAT submission version (superseded: numbers from the earlier integrator; retained as the submission record) | 2026-10-23 | [`論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf`](論文/NEIP_protocol_manuscript_JSTAT_submission_20261023.pdf) |
+| **Revised manuscript, standard-noise results (current manuscript)** | 2026-11-19 | [`論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf`](論文/NEIP_protocol_manuscript_standard_noise_20261119.pdf) |
 
-> **The 2026-10-23 version is the current manuscript and supersedes all earlier
-> files.** It is the PDF submitted to JSTAT, with the title above. Its reported
-> numbers are identical to the 2026-10-04 version, so the code deposited in v4.0
-> reproduces both. Those numbers were produced by the integrator described in the
-> erratum above; the corrected numbers are in the current `コード/`.
+> **The 2026-11-19 version is the current manuscript and supersedes all earlier
+> files.** It reports the 30-component results recomputed with the standard
+> Euler–Maruyama integrator (see the erratum above). The 2026-10-23 PDF is the
+> version submitted to JSTAT; its numbers (identical to the 2026-10-04 version) were
+> produced by the earlier integrator, which the code deposited in v4.0 reproduces.
+> The corrected numbers are in the current `コード/`.
 
 > **The 2026-10-04 PRE submission version remains here as a record, not as the
 > current text.** It is the file submitted to *Physical Review E* (`EX12494`) and
@@ -116,7 +118,7 @@ Slide-style explanations and theory documents:
 | :--- | :--- |
 | `NEIP_1.pdf` | NEIP basics & NEIC 4 requirements (Zenodo 22088694) |
 | `NEEP_2.pdf` | Extended Integrated Field Equation & macroscopic coherence (Zenodo 22138906) |
-| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (manuscript; JSTAT submission version) |
+| `NEIP_3.pdf` | Data-driven identification, 3-stage protocol (slides based on the JSTAT submission version; numbers from the earlier integrator, not updated) |
 | `NEIP_Systematization.pdf` | NEIP systematization overview (Zenodo 22682953) |
 | `統合意識理論１.pdf` | Consciousness as a nonequilibrium critical predictive information field (Ver.1.1.0) |
 | `精神の非平衡統計場理論.pdf` | Spin-glass hierarchical self, quantum criticality, semantic phase transition (Ver.1.1.0) |
