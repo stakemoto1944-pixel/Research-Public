@@ -72,9 +72,10 @@ referee report.**
 
 - **Code and data DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI — always resolves to the latest version; CC BY 4.0. Current latest
-  is **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
-  published 2026-10-26, which bundles the code archive **and** the JSTAT-submission
-  manuscript PDF. v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347)
+  is **v5.0** = [10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781),
+  published 2026-11-19, which bundles the standard-noise code archive **and** the
+  revised manuscript PDF. v4.0 = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)
+  (2026-10-26) holds the JSTAT-submission PDF and the earlier integrator. v3.0 = [10.5281/zenodo.23135347](https://doi.org/10.5281/zenodo.23135347)
   retains the PRE-submission PDF)
 
 | Version | Date | File |
@@ -138,8 +139,9 @@ erratum above). The package of Zenodo v4.0, which reproduces the earlier numbers
 
 - **DOI**: [10.5281/zenodo.23050818](https://doi.org/10.5281/zenodo.23050818)
   (concept DOI, CC BY 4.0, deposited as *Software*; always resolves to the latest
-  version — currently **v4.0** = [10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287),
-  which bundles the JSTAT-submission manuscript PDF; v3.0 = `10.5281/zenodo.23135347`
+  version — currently **v5.0** = [10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781),
+  which bundles the revised standard-noise manuscript PDF; v4.0 =
+  `10.5281/zenodo.23650287` holds the JSTAT-submission PDF (earlier integrator); v3.0 = `10.5281/zenodo.23135347`
   keeps the PRE-submission PDF)
 - **Entry point**: [`コード/README.md`](コード/README.md) — requirements,
   execution order, expected values, and a list of the corrections included.
@@ -216,7 +218,8 @@ submission version, the 2026-10-04 PRE submission version and the two earlier dr
 §6 are not optional — the first draft's numbers and its original theoretical
 prediction have both been withdrawn. Cite the concept DOI
 `10.5281/zenodo.23050818` so that your reference resolves to the complete
-archive; v4.0
-([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)) archives the
-2026-10-23 JSTAT version with the earlier integrator; the current manuscript and the
-standard-noise code are planned for v5.0.
+archive; v5.0
+([10.5281/zenodo.24361781](https://doi.org/10.5281/zenodo.24361781)) archives the current manuscript and the standard-noise
+code, and v4.0
+([10.5281/zenodo.23650287](https://doi.org/10.5281/zenodo.23650287)) the 2026-10-23
+JSTAT version with the earlier integrator.
